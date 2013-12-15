@@ -15,7 +15,7 @@ use \wcf\util\StringUtil;
  * @package	com.kittmedia.wcf.fpdf
  * @category	Community Framework
  */
-class PDFWriter {
+class FPDFWriter {
 	/**
 	 * Font families shipped with FPDF
 	 * @var		array<string>
