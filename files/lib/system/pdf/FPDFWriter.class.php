@@ -7,7 +7,7 @@ use \wcf\system\WCF;
 use \wcf\util\StringUtil;
 
 /**
- * Creates a PDF file.
+ * Creates a PDF file with FPDF.
  * 
  * @author	Dennis Kraffczyk
  * @copyright	2011-2013 KittMedia Productions
