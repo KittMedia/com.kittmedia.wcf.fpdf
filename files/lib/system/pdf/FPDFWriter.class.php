@@ -10,7 +10,7 @@ use \wcf\util\StringUtil;
  * Creates a PDF file with FPDF.
  * 
  * @author	Dennis Kraffczyk
- * @copyright	2011-2014 KittMedia Productions
+ * @copyright	2011-2016 KittMedia Productions
  * @license	Commercial <https://kittblog.com/board/licenses/commercial.html>
  * @package	com.kittmedia.wcf.fpdf
  * @category	Community Framework
@@ -102,7 +102,10 @@ class FPDFWriter {
 		if (empty(static::$fontDirectory)) {
 			static::$fontDirectory = WCF_DIR.'font/fpdf';
 		}
-		define('FPDF_FONTPATH', static::$fontDirectory);
+		
+		if (!defined('FPDF_FONTPATH')) {
+			define('FPDF_FONTPATH', static::$fontDirectory);
+		}
 		
 		require_once(WCF_DIR.'lib/system/api/fpdf/fpdf.php');
 		$this->pdf = new \FPDF(static::$orientation, static::$unit, static::$size);
