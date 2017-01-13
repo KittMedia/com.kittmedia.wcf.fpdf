@@ -10,8 +10,8 @@ use \wcf\util\StringUtil;
  * Creates a PDF file with FPDF.
  * 
  * @author	Dennis Kraffczyk
- * @copyright	2011-2016 KittMedia Productions
- * @license	Commercial <https://kittblog.com/board/licenses/commercial.html>
+ * @copyright	2011-2017 KittMedia
+ * @license	Free <https://kittblog.com/board/licenses/free.html>
  * @package	com.kittmedia.wcf.fpdf
  * @category	Community Framework
  */
