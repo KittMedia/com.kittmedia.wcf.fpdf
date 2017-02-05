@@ -5,12 +5,12 @@
 		<packagedescription><![CDATA[This package includes the free FPDF library into the WoltLab Community Framework 2. Thus, a PHP-based PDF creation is possible.]]></packagedescription>
 		<packagename language="de">FPDF support</packagename>
 		<packagedescription language="de"><![CDATA[Dieses Paket bindet die freie FPDF-Bibliothek in das WoltLab Community Framework ein. Dadurch wird eine PHP-gestützte PDF-Erstellung möglich.]]></packagedescription>
-		<version>1.0.0 RC 1</version>
-		<date>2017-01-13</date>
+		<version>1.0.0 RC 2</version>
+		<date>2017-02-05</date>
 	</packageinformation>
 	
 	<authorinformation>
-		<author><![CDATA[KittMedia Productions]]></author>
+		<author><![CDATA[KittMedia]]></author>
 		<authorurl>http://kittmedia.com</authorurl>
 	</authorinformation>
 	
@@ -19,6 +19,11 @@
 	</requiredpackages>
 	
 	<instructions type="install">
+		<!-- files -->
+		<instruction type="file">files.tar</instruction>
+	</instructions>
+	
+	<instructions type="update" fromversion="1.0.0 RC 1">
 		<!-- files -->
 		<instruction type="file">files.tar</instruction>
 	</instructions>
