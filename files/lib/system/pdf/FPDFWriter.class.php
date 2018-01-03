@@ -10,8 +10,8 @@ use \wcf\util\StringUtil;
  * Creates a PDF file with FPDF.
  * 
  * @author	Dennis Kraffczyk
- * @copyright	2011-2017 KittMedia
- * @license	Free <https://kittblog.com/board/licenses/free.html>
+ * @copyright	2011-2018 KittMedia
+ * @license	Free <https://kittmedia.com/licenses/#licenseFree>
  * @package	com.kittmedia.wcf.fpdf
  * @category	Community Framework
  */
@@ -142,6 +142,7 @@ class FPDFWriter {
 	 * Adds a table with given data.
 	 * @param		array<mixed>		$tableHeader
 	 * @param		array<mixed>		$tableData
+	 * @param		array<mixed>		$subTableData
 	 */
 	public function addTable($tableHeader, $tableData = array(), $subTableData = array()) {
 		if (!empty($tableData)) {
@@ -321,7 +322,7 @@ class FPDFWriter {
 	
 	/**
 	 * Formats a text for using it within a pdf.
-	 * You can passe an language variable as '$text' and variables.
+	 * You can pass a language variable as '$text' and variables.
 	 * @param	string		$text
 	 * @param	array<mixed>	$variables
 	 * @return	string
@@ -330,7 +331,8 @@ class FPDFWriter {
 		$text = WCF::getLanguage()->getDynamicVariable($text, $variables);
 		
 		if (StringUtil::isUTF8($text)) {
-			$text = StringUtil::convertEncoding('UTF-8', 'ISO-8859-1', $text);
+			// see http://fpdf.de/forum/viewtopic.php?f=25&p=17838#p17838
+			$text = \iconv('UTF-8', 'Windows-1252//TRANSLIT', $text);
 		}
 		
 		return $text;
